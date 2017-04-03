@@ -2,19 +2,15 @@ package testg4base;
 
 public class Recherche {
 
-    static int position;
-
-    public static int recherche(String recherche, String chaine) {
-        position = chaine.indexOf(recherche);
+    public void recherche(String recherche, String chaine) {
+        int position = chaine.indexOf(recherche);
 
         while (position > 0) {
-            System.out.println("Couille : " + position);
+            System.out.println("Position de la chaine " + chaine + " : " + position);
             position = chaine.indexOf(recherche, position + 1);
         }
 
         System.out.println("Fini");
-
-        return position;
     }
 
 }

@@ -23,6 +23,9 @@ public class CoursJavaNetBeans {
         
         // Utilisation d'un enum
         affiche(" On est pas " + Dimanche);
+        
+        Recherche app = new Recherche();
+        app.recherche("f", "essai de retour fff aaa bbb");
     }
     
     /**
