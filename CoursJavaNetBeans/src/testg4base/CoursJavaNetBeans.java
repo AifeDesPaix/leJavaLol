@@ -1,13 +1,17 @@
 /*
  * Les fonctions du cours de Java
  */
-package coursjavanetbeans;
+package testg4base;
 
 /**
  * Fait avec NetBeans
  * @author BBB
  */
 public class CoursJavaNetBeans {
+    
+    // Récupération du dimanche dans l'ENUM des Jours
+    public static Jours Dimanche = Jours.DIMANCHE;
+
 
     /**
      * @param args Les paramètres de l'invité de commande
@@ -16,6 +20,9 @@ public class CoursJavaNetBeans {
         // Appelle de la fonction affiche
         affiche("Début du Programme Main.");
         affiche("--- Cours de Java  ---");
+        
+        // Utilisation d'un enum
+        affiche(" On est pas " + Dimanche);
     }
     
     /**

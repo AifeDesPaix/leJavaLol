@@ -4,7 +4,7 @@ public class Recherche {
 
     static int position;
 
-    public static int recherche(String elementRecherche, String chaineIN) {
+    public static int recherche(String recherche, String chaine) {
         position = chaine.indexOf(recherche);
 
         while (position > 0) {
@@ -14,6 +14,7 @@ public class Recherche {
 
         System.out.println("Fini");
 
+        return position;
     }
 
 }
