@@ -1,10 +1,10 @@
-package testg4base;
+package testbase;
 
 public class Recherche {
 
     static int position;
 
-    public static int recherche(String elementRecherche, String chaineIN) {
+    public static int recherche(String recherche, String chaineIN) {
         position = chaine.indexOf(recherche);
 
         while (position > 0) {

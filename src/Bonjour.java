@@ -1,3 +1,5 @@
+package testbase;
+
 public class Bonjour {
 
     private static String message = "Jew";
