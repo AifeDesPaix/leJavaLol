@@ -1,4 +1,4 @@
-package testbase;
+package base;
 
 public class Recherche {
 

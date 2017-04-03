@@ -1,7 +1,6 @@
-package testbase;
+package base;
 
-
-public class CoursJavaNetBeans {
+public class Main {
 
     public static String message = "jeuifs";
     public static Jours Dimanche = Jours.DIMANCHE;
