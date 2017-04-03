@@ -15,7 +15,7 @@ public class CoursJavaNetBeans {
     public static void main(String[] args) {
         // Appelle de la fonction affiche
         affiche("Début du Programme Main.");
-        affiche("--- Cours de Java G4 ---");
+        affiche("--- Cours de Java  ---");
     }
     
     /**
