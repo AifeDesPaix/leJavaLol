@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import swing.Index;
 
 public class Main {
 
@@ -13,6 +14,8 @@ public class Main {
 
 //        Main.readFile("test.txt");
         swing.Graph1.init();
+//        Index page = new Index();
+//        page.setVisible(true);
     }
 
     public static void mainTest() {
