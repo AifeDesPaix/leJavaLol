@@ -15,7 +15,7 @@ public class Client extends Personne {
 
     @Override
     public String toString() {
-        return "Personne{" +
+        return "Client{" +
                 "nom='" + this.getNom() + '\'' +
                 ", prenom='" + this.getPrenom() + '\'' +
                 ", year=" + this.getYear() +
