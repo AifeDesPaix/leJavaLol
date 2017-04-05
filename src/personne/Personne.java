@@ -25,7 +25,7 @@ public class Personne {
     }
 
     public Personne(String nom, String prenom, int year, int month, int day) {
-        nbInstance++;
+        this.num = nbInstance++;
 
         this.nom = nom;
         this.prenom = prenom;
