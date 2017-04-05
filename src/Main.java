@@ -19,6 +19,11 @@ public class Main {
         System.out.println(p);
         System.out.println(pd);
         System.out.println(c);
+        System.out.println(p.compare(pd));
+        System.out.println(p.compare(c));
+        System.out.println(c.compare(pd));
+        System.out.println(c.compare(c));
+        System.out.println(c.compare(p));
     }
 
 }

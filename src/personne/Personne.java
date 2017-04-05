@@ -2,7 +2,7 @@ package personne;
 
 import java.util.GregorianCalendar;
 
-public class Personne {
+public class Personne implements Classable {
 
     private static int nbInstance;
 
@@ -110,5 +110,32 @@ public class Personne {
         System.out.println(firstName + " : " + this.prenom);
         System.out.println(age + " : " + calcAge());
         System.out.println("N° " + num);
+    }
+
+    @Override
+    public int compare(Object o) {
+        int retVal;
+
+        try {
+            Personne p;
+            if (o instanceof Personne) {
+                p = (Personne)o;
+            } else {
+                throw new Exception("Ce n'est pas une personne.");
+            }
+
+            if( getNom().compareTo(p.getNom()) > 0 ) {
+                retVal = Classable.SUPERIEUR;
+            } else if ( getNom().compareTo(p.getNom()) < 0 ) {
+                retVal = Classable.INFERIEUR;
+            } else {
+                retVal = Classable.EGAL;
+            }
+
+        } catch (Exception e) {
+            retVal = Classable.ERREUR;
+        }
+
+        return retVal;
     }
 }
