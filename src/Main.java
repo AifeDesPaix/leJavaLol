@@ -11,7 +11,8 @@ public class Main {
 //        Main.mainTest();
 //        Main.mainPersonne();
 
-        Main.readFile("test.txt");
+//        Main.readFile("test.txt");
+        swing.Graph1.init();
     }
 
     public static void mainTest() {
