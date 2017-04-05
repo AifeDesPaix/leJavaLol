@@ -1,4 +1,4 @@
-import personne.Personne;
+import personne.*;
 
 import java.util.GregorianCalendar;
 
@@ -11,13 +11,14 @@ public class Main {
 //        Tests.test_operator();
 //        Tests.test_for();
 
-        Personne p = new Personne("Cule", "Jean", 1990, 07, 24);
+        Personne p = new Personne("Cule", "Jean", 1990, 7, 24);
         Personne pd = new Personne();
+
+        Client c = new Client('d');
 
         System.out.println(p);
         System.out.println(pd);
-        p.affichage(true);
-        System.out.println(Personne.getNbInstance());
+        System.out.println(c);
     }
 
 }

@@ -4,35 +4,38 @@ import java.util.GregorianCalendar;
 
 public class Personne {
 
+    private static int nbInstance;
+
+    private int num;
+
     private String nom;
     private String prenom;
-//    private long age;
 
     private int year;
     private int month;
     private int day;
-//    private GregorianCalendar bornDate;
-    private int num;
-    private static int nbInstance;
 
     public Personne() {
+//        Personne("Jalpo", "Kebab", 1900, 12, 31);
         this.nom = "Jalpo";
         this.prenom = "Kebab";
 
         this.year = 1900;
         this.month = 12;
         this.day = 31;
+
+        this.num = nbInstance++;
     }
 
     public Personne(String nom, String prenom, int year, int month, int day) {
-        this.num = nbInstance++;
-
         this.nom = nom;
         this.prenom = prenom;
 
         this.year = year;
         this.month = month;
         this.day = day;
+
+        this.num = nbInstance++;
     }
 
     /**
@@ -50,68 +53,34 @@ public class Personne {
         return age;
     }
 
-//    public String getNom() {
-//        return nom;
-//    }
-//
-//    public void setNom(String nom) {
-//        this.nom = nom;
-//    }
-//
-//    public String getPrenom() {
-//        return prenom;
-//    }
-//
-//    public void setPrenom(String prenom) {
-//        this.prenom = prenom;
-//    }
-//
-//    public long getAge() {
-//        return age;
-//    }
-//
-//    public void setAge(long age) {
-//        this.age = age;
-//    }
-//
-//    public int getYear() {
-//        return year;
-//    }
-//
-//    public void setYear(int year) {
-//        this.year = year;
-//    }
-//
-//    public int getMonth() {
-//        return month;
-//    }
-//
-//    public void setMonth(int month) {
-//        this.month = month;
-//    }
-//
-//    public int getDay() {
-//        return day;
-//    }
-//
-//    public void setDay(int day) {
-//        this.day = day;
-//    }
+    public String getNom() { return nom; }
+    public void setNom(String nom) { this.nom = nom; }
 
+    public String getPrenom() { return prenom; }
+    public void setPrenom(String prenom) { this.prenom = prenom; }
 
-    public static int getNbInstance() {
-        return nbInstance;
-    }
+    public int getYear() { return year; }
+    public void setYear(int year) { this.year = year; }
+
+    public int getMonth() { return month; }
+    public void setMonth(int month) { this.month = month; }
+
+    public int getDay() { return day; }
+    public void setDay(int day) { this.day = day; }
+
+    public int getNum() { return num; }
+
+    public static int getNbInstance() { return nbInstance; }
 
     @Override
     public String toString() {
         return "Personne{" +
                 "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", age=" + calcAge() +
                 ", year=" + year +
                 ", month=" + month +
                 ", day=" + day +
+                ", num=" + num +
                 '}';
     }
 
@@ -140,5 +109,6 @@ public class Personne {
         System.out.println(name + " : " + this.nom);
         System.out.println(firstName + " : " + this.prenom);
         System.out.println(age + " : " + calcAge());
+        System.out.println("N° " + num);
     }
 }
