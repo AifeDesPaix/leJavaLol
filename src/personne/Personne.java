@@ -121,7 +121,7 @@ public class Personne implements Classable {
             if (o instanceof Personne) {
                 p = (Personne)o;
             } else {
-                throw new Exception("Ce n'est pas une personne.");
+                throw new Exception();
             }
 
             if( getNom().compareTo(p.getNom()) > 0 ) {
