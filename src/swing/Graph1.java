@@ -7,17 +7,17 @@ import java.awt.event.MouseEvent;
 
 public class Graph1 {
 
-    public static int width = 800;
-    public static int height = 600;
+    private static int width = 800;
+    private static int height = 600;
 
-    public static JFrame window;
-    public static JPanel panButtons;
+    private static JFrame window;
+    private static JPanel panButtons;
 
-    public static JButton buttonGreen;
-    public static JButton buttonRed;
-    public static JButton buttonBlue;
-    public static JButton buttonCoucou;
-    public static JButton buttonAurevoir;
+    private static JButton buttonGreen;
+    private static JButton buttonRed;
+    private static JButton buttonBlue;
+    private static JButton buttonCoucou;
+    private static JButton buttonAurevoir;
 
     public static void init() {
         // Créer fenetre
@@ -27,6 +27,8 @@ public class Graph1 {
         Graph1.windowPlacement();
         // Ajoute buttons
         Graph1.addButtons();
+        // Ajoute labels
+        Graph1.addLabels();
 
         // Affiche fenetre
         window.setVisible(true);
@@ -43,6 +45,10 @@ public class Graph1 {
 
     public static void addButtons() {
         final JButton[] buttons = new JButton[3];
+
+        // Créer panel (groupe)  de bouttons
+        final JPanel panButtons = new JPanel();
+        panButtons.setBackground(Color.black);
 
         // Créer buttons
         buttonGreen = new JButton("Green");
@@ -61,16 +67,13 @@ public class Graph1 {
         buttonAurevoir = new JButton("Mode Aurevoir");
 
 
-        // Place curseur main survol boutton
+        // Place curseur main survol bouttons
         buttonGreen.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        buttonRed.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        buttonBlue.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        buttonCoucou.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        buttonAurevoir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        buttonRed.setCursor(Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR));
+        buttonBlue.setCursor(Cursor.getPredefinedCursor(Cursor.NE_RESIZE_CURSOR));
+        buttonCoucou.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
+        buttonAurevoir.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 
-        // Créer panel (groupe)  de bouttons
-        final JPanel panButtons = new JPanel();
-        panButtons.setBackground(Color.black);
 
         // Place bouton dans panel
         panButtons.add(buttonGreen);
@@ -104,14 +107,37 @@ public class Graph1 {
                 window.setTitle("COUCOU !!");
             }
         });
+
         buttonAurevoir.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 window.setTitle("AUREVOIR !!");
             }
-        });
 
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                buttonRed.setBackground(Color.white);
+                buttonAurevoir.setBackground(Color.white);
+                buttonGreen.setBackground(Color.white);
+                buttonBlue.setBackground(Color.white);
+                buttonCoucou.setBackground(Color.white);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                buttonRed.setBackground(Color.red);
+                buttonAurevoir.setBackground(Color.white);
+                buttonGreen.setBackground(Color.green);
+                buttonBlue.setBackground(Color.blue);
+                buttonCoucou.setBackground(Color.white);
+            }
+        });
         // Ajoute le panel à la window
         window.getContentPane().add(panButtons);
+    }
+
+    public static void addLabels() {
+//        JLabel fdp = new JLabel("Jew");
+//        window.getContentPane().add(fdp);
     }
 }
